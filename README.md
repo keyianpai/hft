@@ -1,20 +1,23 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
-
 ### What is this repository for? ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* automatic algorithm trading system
 
 ### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
+* System requirement:
+  based on centos 6.5 or 7 (other system are not tested)
+* IDE recommendation:
+  I developed it by vim (using some cool plugin), i also set the neccessary config file for QT, so this can be opened on QT directly.
+* Complie Tools
+  based on g++, using the comple tools waf, the binary file is included in the repository, path hft/backend/bin/waf, for waf, you can google it
+* pre-installed software:
+  this project used zeromq to do ipc, version 4.1.2
+* complie command:
+  in the path of yourhomepath/hft, run "make", you will get binary file in build/bin
+* How to run it
+  just run it, as a start, you can run ctpdata, if network is good, and time is in the trading session(9:00-11:30 13:30-3:00), you can see marketdata come out in your screen.
 * Deployment instructions
 
 ### Contribution guidelines ###
@@ -27,3 +30,5 @@ This README would normally document whatever steps are necessary to get your app
 
 * Repo owner or admin
 * Other community or team contact
+
+Any questions and suggestions are welcome, contact me: huangxy17@fudan.edu.cn
