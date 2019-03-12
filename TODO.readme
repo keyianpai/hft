@@ -1,0 +1,8 @@
+order_ref issue
+1. make neworder and moderateorder as a pair, using the same component - OrderPrice
+2. OrderPrice provide several modes:
+   i) Best
+   ii) Market
+   iii) NoLossBest
+   one selective parameters: edurance->bool, and a num of edurance
+3. ModerateOrder as one function, parmater list->(map, mode, bool, int)

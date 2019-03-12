@@ -1,0 +1,18 @@
+x	pad byte	no value	
+c	char	string of length 1	
+b	signed char	integer	
+B	unsigned char	integer	
+?	_Bool	bool	(1)
+h	short	integer	
+H	unsigned short	integer	
+i	int	integer	
+I	unsigned int	integer or long	
+l	long	integer	
+L	unsigned long	long	
+q	long long	long	(2)
+Q	unsigned long long	long	(2)
+f	float	float	
+d	double	float	
+s	char[]	string	
+p	char[]	string	
+P	void *	long

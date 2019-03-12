@@ -1,0 +1,1 @@
+g++ md5.cpp -fPIC -shared -o ../lib/libmd5.so
