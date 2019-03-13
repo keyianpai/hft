@@ -13,7 +13,9 @@ Strategy::Strategy(const libconfig::Setting & param_setting, const libconfig::Se
     closed_size(0),
     build_position_time(MAXINT),
     last_valid_mid(0.0),
-    stop_loss_times(0) {
+    stop_loss_times(0),
+    max_close_try(10) {
+  e_f = true;
   MarketSnapshot shot;
   try {
     cancel_limit = contract_setting["cancel_limit"];
@@ -187,7 +189,16 @@ bool Strategy::HitMean() {
 
 void Strategy::ForceFlat() {
   printf("%ld [%s %s]this round hit stop_loss condition, pos:%d current_mid:%lf, stoplossline %lf forceflat\n", shot_map[hedge_ticker].time.tv_sec, main_ticker.c_str(), hedge_ticker.c_str(), position_map[main_ticker], map_vector.back(), stop_loss_down_line);
-  while (!Close(true));
+  for (int i = 0; i < max_close_try; i++) {
+    if (Close(true)) {
+      break;
+    }
+    if (i == max_close_try - 1) {
+      printf("[%s %s]try max_close times, cant close this order!\n", main_ticker.c_str(), hedge_ticker.c_str());
+      PrintMap(order_map);
+      order_map.clear();  // it's a temp solution, TODO
+    }
+  }
   CalParams();
 }
 
@@ -235,7 +246,7 @@ bool Strategy::Close(bool force_flat) {
     }
     */
     double this_round_pnl = (pos > 0) ? (shot_map[main_ticker].bids[0] - avgcost_map[main_ticker] + avgcost_map[hedge_ticker] - shot_map[hedge_ticker].asks[0])*pos : (shot_map[main_ticker].asks[0] - avgcost_map[main_ticker] + avgcost_map[hedge_ticker] - shot_map[hedge_ticker].bids[0])*pos;
-    this_round_pnl -= round_fee_cost;
+    this_round_pnl -= round_fee_cost*abs(pos);
     printf("%ld [%s %s]%sThis round close pnl: %lf, fee_cost: %lf pos is %d, holding second is %ld\n", shot_map[hedge_ticker].time.tv_sec, main_ticker.c_str(), hedge_ticker.c_str(), force_flat ? "[Time up] " : "", this_round_pnl, round_fee_cost, pos, shot_map[hedge_ticker].time.tv_sec - build_position_time);
     build_position_time = MAXINT;
     return true;

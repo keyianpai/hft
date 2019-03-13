@@ -100,6 +100,7 @@ class Strategy : public BaseStrategy {
   double close_fee_rate;
   double deposit_rate;
   double round_fee_cost;
+  int max_close_try;
 };
 
 #endif  // SRC_SIMPLEARB_STRATEGY_H_
