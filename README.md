@@ -1,11 +1,9 @@
 # High Frequency Trading Solution #
 
 ### What is this repository for? ###
-
 * automatic algorithm trading system
 
 ### How do I get set up? ###
-
 * System requirement:
   based on centos 6.5 or 7 (other system have not tested)
 * IDE recommendation:
@@ -20,8 +18,21 @@
   just run it, as a start, you can run ctpdata, if network is good, and time is in the trading session(9:00-11:30 13:30-3:00), you can see marketdata come out in your screen.
 * Deployment instructions
 
-### Author:
 
+### Exsited strategy:
+1. Hedged market-making strategy
+2. statistical arbitrage
+3. Moving-Average golden death corssing strategy
+4. turtle strategy (on-goinig by ShengRui zhao)
+
+
+### Open Source:
+Currently, the repository opened the strategy code, exchange api code, backtest code, complementary tools code.
+For the base part of strategy, I just make it as a dynamic library in external, ok to use, but code is not included
+here, the reason is that something i am now still debugging, reconstructing, and thinking. if you have any questions
+on this part, contract me.
+
+### Author:
 * XinYu Huang
 
 any questions or suggestions are welcome, please contract me with:huangxy17@fudan.edu.cn, i will list your name here to thanks for your contribution.
