@@ -20,11 +20,12 @@
   just run it, as a start, you can run ctpdata, if network is good, and time is in the trading session(9:00-11:30 13:30-3:00), you can see marketdata come out in your screen.
 * Deployment instructions
 
-### Author ###:
+### Author:
 
 * XinYu Huang
 
 any questions or suggestions are welcome, please contract me with:huangxy17@fudan.edu.cn, i will list your name here to thanks for your contribution.
 
-### Thanks list ###:
+### Thanks list :
 ShengRui zhao: getting most active products on futures market tools, fill the detail config for all contracts.
+Jian Sun: professor of school of Economics, Fudan university. Fund-supporter and strategy idea consultant.
