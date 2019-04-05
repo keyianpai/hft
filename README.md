@@ -29,3 +29,4 @@ any questions or suggestions are welcome, please contract me with:huangxy17@fuda
 ### Thanks list :
 * ShengRui zhao: most active products getting tools on futures market, fill the detail config for all contracts.
 * Jian Sun: professor of school of Economics, Fudan university. Fund-supporter and strategy idea consultant.
+* Wei Sun: systems consultant.
