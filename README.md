@@ -5,7 +5,7 @@
 
 ### How do I get set up? ###
 * System requirement:
-  based on centos 6.5 or 7 (other system have not tested)
+  based on centos 6.5 or 7 (other system have not been tested)
 * IDE recommendation:
   I developed it by vim (using some cool plugin), i also set the neccessary config file for QT, so this can be opened on QT directly.
 * Complie Tools
